@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center mt-100">
+  <div class="row">
+    <div  (click)="go(event.eventName)"class="col-md-4" style="width: 1200px;" *ngFor="let event of Events">
+      <div   class="product-wrapper mb-45 text-center">
+        <div class="product-img" style="position: relative;">
+          <a data-abc="true">
+            <img [src]="event.imageUrl" alt="">
+          </a>
+          <span class="date-span"><i class="fa fa-calendar"></i> {{ getFormattedDate(event.dateTime) }}</span>
+          <span class="location-span"><i class="fa fa-map-marker"></i> {{ event.location }}</span>
+          <span class="price-span"><i class="fa fa-ticket"></i> {{ event.ticketPrice }}</span>
+          <div class="product-action">
+            <div class="product-action-style">
+
+              <a (click)="updateEvent(event)" class="action-heart" title="Wishlist" data-abc="true"> <i
+                  class="fa fa-pencil"></i> </a>
+              <a (click)="deleteEvent(event)" lass="action-cart" title="Add To Cart" data-abc="true"> <i
+                  class="fa fa-trash"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <button routerLink="/TypeselectComponent" style="--clr:#F1948A"><span>CREATE EVENT</span><i></i></button>
+</div>

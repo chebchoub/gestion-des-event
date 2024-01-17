@@ -1,0 +1,14 @@
+<body>
+    <select name="chapter" required (change)="gotomoreinforamtion()" [(ngModel)]="this.locationInput">
+        <option selected hidden value="" sty><span>🗺️</span><span style="margin-left: 20px;">Location</span>
+        </option>
+        <option style="border-radius: 5px;" value="Cité de la Culture">Cité de la Culture</option>
+       <option  style="border-radius: 5px;" value="Cinéma Le Colisée, Avenue Habib Bourguiba, Tunis">Cinéma Le Colisée, Avenue Habib Bourguiba, Tunis</option>
+       <option  style="border-radius: 5px;" value="Maison de la culture Ibn Rachiq, Tunis">Maison de la culture Ibn Rachiq, Tunis</option>
+       <option style="border-radius: 5px;" value="Westerwelle Startup Haus Tunis">Westerwelle Startup Haus Tunis    </option>
+
+      </select>
+
+</body>
+<div class="full" id="map">
+</div>

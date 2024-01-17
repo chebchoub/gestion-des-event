@@ -1,0 +1,36 @@
+
+select {
+    width: 40%;
+    padding: 15px;
+    display: inline-block;
+    border: none;
+    background:transparent;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-left: 30%;
+    border-radius:5px ;
+    border: 1px solid  ;
+    border-color: grey;
+  }
+  option{
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border: none;
+    background:transparent;
+    font-family: Montserrat,Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-left: 35%;
+    border-radius:5px ;
+    border: 1px solid  ;
+    border-color: grey;
+  }
+  .full{
+     margin-top: 10px;
+     width: 60%;
+     height: 500px;
+     margin-left: 20%;
+     margin-bottom: 30px;
+     border-radius: 10px;
+    }
+  

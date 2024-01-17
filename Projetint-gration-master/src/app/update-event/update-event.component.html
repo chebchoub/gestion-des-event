@@ -1,0 +1,87 @@
+<div class="demo-page">
+  <main style="margin-left: 150px;"class="demo-page-content">
+
+    <form   (ngSubmit)="updateEvent()" id="login-form" class="user-form" autocomplete="off">
+    <section>
+      <div class="href-target" id="input-types"></div>
+      <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+          <line x1="21" y1="10" x2="3" y2="10" />
+          <line x1="21" y1="6" x2="3" y2="6" />
+          <line x1="21" y1="14" x2="3" y2="14" />
+          <line x1="21" y1="18" x2="3" y2="18" />
+        </svg>
+        Event Information        </h1>
+      <div class="nice-form-group">
+        <label for="eventname">Event Name <span style="color: #dd6666;">*</span></label>
+        <input type="text" id="eventname" name="eventname" placeholder="Your evnet name" [(ngModel)]="event.eventName" />
+      </div>
+      <div class="nice-form-group">
+        <label for="startDate" class="date-label" >Date : <span style="color: #dd6666;">*</span></label>
+        <input type="date" [(ngModel)]="this.event.dateTime" id="startDate" name="startDate" class="date-input" min="2023-01-01" max="2023-12-31">
+      </div>
+      <div class="nice-form-group" *ngIf="event.category">
+        <label for="eventCategory">Location : <span style="color: #dd6666;">*</span></label>
+        <select id="eventCategory" [(ngModel)]="event.location" name="selectedCategory">
+          <ng-container *ngIf="event.category === 'Conférences'">
+            <option style="border-radius: 5px;" value="Palais des Congrès - قصر المؤتمرات">Palais des Congrès - قصر المؤتمرات</option>
+            <option  style="border-radius: 5px;" value="CICT CENTRE INTERNATIONAL DES CONGRES DE TUNIS L’UTICA">CICT CENTRE INTERNATIONAL DES CONGRES DE TUNIS L’UTICA</option>
+            <option  style="border-radius: 5px;" value="Salle des Conférences, Technopôle Manouba">Salle des Conférences, Technopôle Manouba</option>
+            <option style="border-radius: 5px;" value="Salle des Séminaires">Salle des Séminaires</option>
+          </ng-container>
+          <ng-container *ngIf="event.category === 'Evénements Artistiques'">
+            <option style="border-radius: 5px;" value="Cité de la Culture">Cité de la Culture</option>
+            <option  style="border-radius: 5px;" value="Cinéma Le Colisée, Avenue Habib Bourguiba, Tunis">Cinéma Le Colisée, Avenue Habib Bourguiba, Tunis</option>
+            <option  style="border-radius: 5px;" value="Maison de la culture Ibn Rachiq, Tunis">Maison de la culture Ibn Rachiq, Tunis</option>
+            <option style="border-radius: 5px;" value="Westerwelle Startup Haus Tunis">Westerwelle Startup Haus Tunis    </option>
+          </ng-container>
+          <ng-container *ngIf="event.category === 'Evénements Sportif'">
+            <option style="border-radius: 5px;" value="California GYM BARDO">California GYM BARDO</option>
+            <option style="border-radius: 5px;" value="RED SQUARE BARDO">RED SQUARE BARDO</option>
+            <option style="border-radius: 5px;" value="4FIT">4FIT</option>
+            <option style="border-radius: 5px;" value="My Gym bardo">My Gym bardo</option>
+          </ng-container>
+        </select>
+      </div>
+
+      <div class="nice-form-group">
+        <label for="priceticket">Price Ticket<span style="color: #dd6666;">*</span></label>
+        <input type="number" name="priceticket" placeholder="0 DT" [(ngModel)]="event.ticketPrice" />
+      </div>
+
+      <div class="nice-form-group">
+        <label for="capacity">capacity<span style="color: #dd6666;">*</span></label>
+        <input type="number" name="capacity" placeholder="0" [(ngModel)]="event.capacity" />
+      </div>
+
+      <div class="nice-form-group">
+        <label for="poster">Event Poster <span style="color: #dd6666;">*</span></label>
+        <div class="poster-container" ><img src="{{event.imageUrl}}"  class="poster-image"/></div>
+        <br>
+        <br>
+        <a href="https://www.appypie.com/design/poster/maker" target="_blank">Create your Poster with Appypie</a>
+        <br>
+        <br>
+
+        <input type="file" name="poster" (change)="onSelectFile($event)"/>
+      </div>
+
+      <div class="nice-form-group">
+          <label for="description">description <span style="color: #dd6666;">*</span></label>
+          <textarea rows="5" name="description" placeholder="Your event description" [(ngModel)]="event.description"></textarea>
+      </div>
+
+      <div class="nice-form-group">
+        <label for="contactInformation"> Contact Information<span style="color: #dd6666;">*</span> </label>
+        <input type="text"rows="5" name="contactInformation" placeholder="Your Contact Information Here" [(ngModel)]="event.contactInformation">
+      </div>
+      <details>
+        <summary>
+          <input class="submit"type="submit" value="Update"/>
+
+        </summary>
+      </details>
+    </section>
+  </form>
+  </main>
+</div>

@@ -1,0 +1,42 @@
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .paypal-container {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 400px; /* Ajustez la largeur selon vos besoins */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .amount {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+
+  #paymentRef {
+    /* Styles spécifiques pour le conteneur paymentRef si nécessaire */
+  }
+
+  .back {
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }

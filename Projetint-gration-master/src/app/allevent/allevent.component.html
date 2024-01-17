@@ -1,0 +1,47 @@
+<div  style="  display: flex;
+align-items: flex-start; /* Alignement en haut */
+justify-content: space-between">
+    <!-- Catégorie -->
+    
+    <select required [(ngModel)]="this.category" (change)="getEventsByCategory()" id="category">
+        <option selected hidden value=""><span></span><span style="margin-left: 20px;">Category</span></option>
+      <option selected value="all" sty>All category</option>
+      <option value="Conférences">Conférences</option>
+      <option value="Evénements Artistiques">Evénements Artistiques</option>
+      <option value="Evénements Sportif">Evénements Sportif</option>
+      <!-- Ajoutez d'autres options selon vos catégories -->
+    </select>
+    <div style="margin-top: 10px;        
+    ">
+    <button  style="--clr:#F1948A"  *ngIf="!showDescButton" (click)="getEventsByTicketPriceDesc()"><span> Price <i class="fa fa-sort-amount-desc" aria-hidden="true"></i></span></button>
+    <button  style="--clr:#F1948A"  *ngIf="!showAscButton" (click)="getEventsByTicketPriceAsc()"><span>Price <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></span></button>
+  </div>
+   
+  </div>
+<div class="container d-flex justify-content-center mt-100" >
+    <div class="row">
+      <div  class="col-md-4" style="width: 1200px;" *ngFor="let event of events">
+        <div class="product-wrapper mb-45 text-center">
+          <div class="product-img" style="position: relative;">
+            <a data-abc="true">
+              <img [src]="event.imageUrl" alt="">
+            </a>
+            <span class="date-span"><i class="fa fa-calendar"></i> {{ getFormattedDate(event.dateTime) }}</span>
+            <span class="location-span"><i class="fa fa-map-marker"></i> {{ event.location }}</span>
+            <span class="price-span"><i class="fa fa-ticket"></i> {{ event.ticketPrice }}</span>
+            <div class="product-action">
+              <div class="product-action-style">
+                <a (click)="go(event.eventName)" class="action-participate" title="Participate" data-abc="true">
+                    <i class="fa fa-check"> </i> <!-- Icône de check -->
+                  </a>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>
+  

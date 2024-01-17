@@ -1,0 +1,35 @@
+<header class="header sticky sticky--top js-header">
+
+  <div class="grid">
+
+    <nav class="navigation">
+      <ul class="navigation__list navigation__list--inline">
+        <li class="navigation__item" style="margin-left: 10px;"><a href="#"  ><img src="assets/img/logo.png" style="width: 130px;height: 60px;"></a></li>
+
+        <li class="navigation__item"><a href="#" class="navigation__link" >About Us</a></li>
+        <li class="navigation__item" routerLink="/AlleventComponent"><a class="navigation__link" >Events</a></li>
+        <li class="navigation__item" *ngIf="serviceUser.isLoggedIn()"><a href="#" class="navigation__link" routerLink="/MyEventsComponent">My events</a></li>
+        <div style="display: flex;justify-content: space-between;margin-left: 750px;">       
+          <li *ngIf="serviceUser.isLoggedIn()" style="color: aliceblue;" class="navigation__item"><a  (click)="onLogoutClick()"class="navigation__link navigation__link--is-active" >logout</a></li>
+
+        <li class="navigation__item" *ngIf="!serviceUser.isLoggedIn()" style="margin-right: 10px;"><a routerLink="/LoginComponent" class="navigation__link navigation__link--is-active">Log In</a></li>
+        <li class="navigation__item" *ngIf="!serviceUser.isLoggedIn()" ><a routerLink="/RegisterComponent"  class="navigation__link navigation__link--is-active">Sign In</a></li>
+      </div>
+      </ul>
+
+
+
+    </nav>
+
+  </div>
+
+</header>
+
+<main class="main">
+
+  <div class="grid">
+
+   <router-outlet></router-outlet>
+  </div>
+
+</main>
