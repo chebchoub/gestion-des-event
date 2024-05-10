@@ -26,7 +26,7 @@ export class Eventdetail2Component {
     imageUrl: ''
   };
   Listecommandes: any[] = [];
-  name!: string; public chartData: any;
+  name!: string; 
   dates: string[] = [];
   nbrTickets: number[] = [];
   getFormattedDate(date: Date): string {
@@ -61,19 +61,7 @@ export class Eventdetail2Component {
         });
 
         // Mise à jour du graphique (si nécessaire)
-        this.chartData = {
-          labels: Object.keys(ticketsParDate),
-          datasets: [
-            {
-              label: 'Nombre de tickets par jour',
-              data: Object.values(ticketsParDate),
-              fill: false,
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 2
-            }
-          ]
-        };
+     
 
       },
       error => {

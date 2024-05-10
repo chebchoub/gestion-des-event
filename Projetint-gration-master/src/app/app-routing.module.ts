@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'EventFormInformationComponent', component: EventFormInformationComponent },
   { path: 'MyEventsComponent', component: MyeventsComponent },
   { path: 'UpdateEventComponent/:eventId', component: UpdateEventComponent },
-  { path: 'AlleventComponent', component: AlleventComponent },
+  { path: 'all', component: AlleventComponent },
   { path: 'EventdetailleComponent/:nameEvent', component: EventdetailleComponent },
   { path: 'Eventdetail2Component/:nameEvent', component: Eventdetail2Component },
   { path: 'PaymentComponentComponent/:ticketPrice', component: PaymentComponentComponent },

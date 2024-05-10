@@ -33,7 +33,6 @@ public class EventController {
         eventService.saveOrUpdate(events);
         return events.get_id();
     }
-
     @GetMapping(value = "/getAll")
     private Iterable<Event> getEvents(){
         return eventService.listAll();

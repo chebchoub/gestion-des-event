@@ -22,7 +22,6 @@ import { Eventdetail2Component } from './eventdetail2/eventdetail2.component';
 import { PaymentComponentComponent } from './payment-component/payment-component.component';
 import { ConfirmPaymentComponentComponent } from './confirm-payment-component/confirm-payment-component.component';
 import { FormInscriptionComponent } from './form-inscription/form-inscription.component';
-import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -49,9 +48,7 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,  
-    
-    NgChartsModule
+    FormsModule
 
   ],
   providers: [DatePipe,Location],

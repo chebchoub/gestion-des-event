@@ -22,12 +22,9 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     public AuthResponse register(RegisterRequest request) {
         User user = new User(request.getNom(),request.getPrenom(), request.getEmail(), passwordEncoder.encode(request.getPassword()),Role.USER);
-
         userRepository.save(user);
         var jwtToken=jwtService.generateToken(user);
         return AuthResponse.builder().token(jwtToken).build();
-
-
     }
 
     public Optional<User> getByMail(RegisterRequest request)
